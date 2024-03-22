@@ -2,6 +2,7 @@ package conn_tool
 
 import (
 	"github.com/go-redis/redis"
+	"iptables_manage/config"
 	"iptables_manage/redis_tool"
 	"runtime"
 	"time"
@@ -26,7 +27,7 @@ var RedisCacheExpire = 30 * time.Second
 
 func InitRedisDB() *redis.Client {
 	//redisConn := redis_tool.GetRedisConn("127.0.0.1:6379", "jTq7AApSED8MkH5q", 15)
-	redisConn := redis_tool.GetRedisConn("172.27.160.1:6379", "", 0)
+	redisConn := redis_tool.GetRedisConn(config.RedisAddr, "", 0)
 	//redisConn := redis_tool.GetRedisConn("127.0.0.1:6379", "", 0)
 	return redisConn
 }

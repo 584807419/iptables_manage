@@ -19,6 +19,7 @@ func main() {
 	//r.Use(middlewares.Cors())           // 跨域中间件
 	//r.Use(middlewares.StatCost())
 	//r.Use(middlewares.ControlFrequency()) // 频率控制中间件
+	//r.Use(middlewares.GetIpFromHeader())
 
 	r.POST("/ip_create", api_service.IpRuleCreate)
 	r.POST("/ip_renewal", api_service.IpRuleRenewal)

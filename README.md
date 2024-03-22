@@ -5,10 +5,14 @@
 
 
 # 二、编译
-SET CGO_ENABLED=0
-SET GOARCH=amd64
-SET GOOS=linux
-go build iptables_manage
+`SET CGO_ENABLED=0`
+
+`SET GOARCH=amd64`
+
+`SET GOOS=linux`
+
+`go build iptables_manage`
+
 
 # 三、能力
 1. 支持部署到多个机器上，部署到哪一台机器上，就可以通过接口操纵哪一台机器上的iptables
@@ -30,7 +34,7 @@ go build iptables_manage
 2. 添加允许规则：通过SSH远程操作的情况，需要把操作机器的 IP 地址添加允许规则，以便后续能正常访问机器。
 
    ```bash
-   iptables -A INPUT -s <允许的IP地址> -j ACCEPT
+   iptables -A INPUT -s 172.19.128.1 -j ACCEPT
    ```
 
    将 `<允许的IP地址>` 替换为实际允许访问的 IP 地址。你可以根据需要添加多个规则，每个规则对应一个允许的 IP 地址。
